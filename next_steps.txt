@@ -1,0 +1,26 @@
+1. **Clickbait Detection** (High Value)
+   - AI scores headline "clickbait-ness" → rewrite only 3-5 worst ones
+   - `result = ollama.run("Score 1-10 clickbait level: '{title}'")`
+   - if score > 6 → rewrite, else show original
+
+2. **Deeper + Smarter Range** 
+   - `num=50` + `[8:30]` = pure clickbait zone
+   - Show 12 stories: 4 top legit + 8 rewritten clickbait
+
+3. **Personalized For You** (Advanced)
+   - Scrape your actual Google News page (cookies/selenium)
+   - RSS-Bridge with your Google account
+
+4. **GitHub Repo Polish**
+   - Finish `gh repo create` 
+   - Add screenshot of Firefox output
+   - Config templates (fish/sway)
+
+
+---
+
+# Test deeper range first (5min)
+sed -i 's|num=8|num=50|' coffee-news.py  # More stories
+sed -i 's|\[:8\]|\[8:25\]|' coffee-news.py  # Clickbait zone
+~/bin/coffee-news  # See real value!
+
